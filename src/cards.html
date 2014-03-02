@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cards!</title>
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="cards.js"></script>
+
+    <style type="text/css">
+
+        h1
+        {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        #delay
+        {
+            width: 65px;
+        }
+
+        .player
+        {
+            width: 40%;
+            float: left;
+            border: solid 1px gray;
+            padding: 0 5px 0 5px;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        .cards
+        {
+
+        }
+        .card
+        {
+            display: block;
+            float: left;
+            width: 71px;
+            height: 96px;
+            text-align: center;
+            margin: 5px;
+            text-decoration: none;
+            outline: none;
+        }
+
+
+        .stacks
+        {
+            clear: both;
+            margin: 15px 5px 15px 5px;
+            border: solid 3px green;
+            min-height: 170px;
+        }
+        .stacks:after
+        {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        Message delay: <input id="delay" type="text" pattern="\d+" value="2500" /> ms
+    </div>
+    <div class="announcer">
+        <h1 id="announcement"></h1>
+    </div>
+    <div id="gameBoard">
+
+    </div>
+
+</body>
+</html>
