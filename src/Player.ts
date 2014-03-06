@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="Deck.ts" />
@@ -9,17 +9,17 @@
 
 class Player {
 
-    public cards:Card[] = new Array<Card>();
-    public stacks:Card[] = new Array<Card>();
+    public cards:Card[] = [];
+    public stacks:Card[] = [];
     public nextPlayer:Player;
     public container:JQuery;
 
-    constructor(public name:String, public board:Board) {
+    constructor(public name:String, public gamePlay:GamePlay) {
 
     }
 
     public clear() {
-        this.cards = new Array<Card>();
+        this.cards = [];
     }
 
     public chooseCard(nextStep:(card:Card) => void)

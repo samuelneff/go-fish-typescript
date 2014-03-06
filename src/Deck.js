@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="HumanPlayer.ts" />
@@ -8,7 +8,7 @@
 /// <reference path="Suit.ts" />
 var Deck = (function () {
     function Deck() {
-        this.cards = new Array();
+        this.cards = [];
         this.shuffle();
     }
     Deck.prototype.getAllCards = function () {
@@ -18,7 +18,7 @@ var Deck = (function () {
     // Shuffle algorithm -> Fisher-Yates
     // (http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
     Deck.prototype.shuffle = function () {
-        this.cards = new Array();
+        this.cards = [];
 
         for (var suitIndex = 0; suitIndex < 4; suitIndex++) {
             for (var rankIndex = 0; rankIndex < 13; rankIndex++) {

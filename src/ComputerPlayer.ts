@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="Deck.ts" />
 /// <reference path="HumanPlayer.ts" />
@@ -9,7 +9,7 @@
 
 class ComputerPlayer extends Player
 {
-    constructor(name:String, board:Board)     {
+    constructor(name:String, board:GamePlay)     {
         super(name, board);
     }
 

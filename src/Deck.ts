@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="HumanPlayer.ts" />
@@ -9,7 +9,7 @@
 
 class Deck {
 
-    public cards:Card[] = new Array<Card>();
+    public cards:Card[] = [];
 
     constructor() {
 
@@ -24,7 +24,7 @@ class Deck {
     // (http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
     shuffle():void {
 
-        this.cards = new Array();
+        this.cards = [];
 
         // enums are just integers so create the deck by looping through the known values
         for (var suitIndex = 0; suitIndex < 4; suitIndex++) {

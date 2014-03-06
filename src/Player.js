@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="Deck.ts" />
@@ -7,14 +7,14 @@
 /// <reference path="Rank.ts" />
 /// <reference path="Suit.ts" />
 var Player = (function () {
-    function Player(name, board) {
+    function Player(name, gamePlay) {
         this.name = name;
-        this.board = board;
-        this.cards = new Array();
-        this.stacks = new Array();
+        this.gamePlay = gamePlay;
+        this.cards = [];
+        this.stacks = [];
     }
     Player.prototype.clear = function () {
-        this.cards = new Array();
+        this.cards = [];
     };
 
     Player.prototype.chooseCard = function (nextStep) {

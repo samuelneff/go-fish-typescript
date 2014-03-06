@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="Deck.ts" />
@@ -9,7 +9,7 @@
 
 class HumanPlayer extends Player
 {
-    constructor(name:String, board:Board)     {
+    constructor(name:String, board:GamePlay)     {
         super(name, board);
     }
 
@@ -19,21 +19,21 @@ class HumanPlayer extends Player
 
     public chooseCard(nextStep:(card:Card) => void)
     {
-        this.board.announce(this.name + ", choose a card.");
+        this.gamePlay.announce(this.name + ", choose a card.");
         var _this = this;
 
         $("a", this.container)
             .unbind("click")
             .attr("href", "#")
-            .click(function(e:JQueryEventObject) {
+            .click(function() {
                 // 'this' refers to the 'a' element
                 var card:Card = $(this).data("card");
-                _this.choseCard(card);
+                _this.choseCard();
                 nextStep(card);
             });
     }
 
-    private choseCard(card:Card):void {
+    private choseCard():void {
         $("a", this.container)
             .unbind("click")
             .removeAttr("href");

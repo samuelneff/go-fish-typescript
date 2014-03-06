@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="Deck.ts" />
@@ -9,6 +9,6 @@
 /// <reference path="Suit.ts" />
 $(document).ready(function () {
     var deck = new Deck();
-    var board = new Board(deck);
+    var board = new GamePlay(deck);
 });
 //# sourceMappingURL=cards.js.map

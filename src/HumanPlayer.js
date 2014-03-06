@@ -1,4 +1,4 @@
-/// <reference path="Board.ts" />
+/// <reference path="GamePlay.ts" />
 /// <reference path="Card.ts" />
 /// <reference path="ComputerPlayer.ts" />
 /// <reference path="Deck.ts" />
@@ -22,18 +22,18 @@ var HumanPlayer = (function (_super) {
     };
 
     HumanPlayer.prototype.chooseCard = function (nextStep) {
-        this.board.announce(this.name + ", choose a card.");
+        this.gamePlay.announce(this.name + ", choose a card.");
         var _this = this;
 
-        $("a", this.container).unbind("click").attr("href", "#").click(function (e) {
+        $("a", this.container).unbind("click").attr("href", "#").click(function () {
             // 'this' refers to the 'a' element
             var card = $(this).data("card");
-            _this.choseCard(card);
+            _this.choseCard();
             nextStep(card);
         });
     };
 
-    HumanPlayer.prototype.choseCard = function (card) {
+    HumanPlayer.prototype.choseCard = function () {
         $("a", this.container).unbind("click").removeAttr("href");
     };
     return HumanPlayer;
