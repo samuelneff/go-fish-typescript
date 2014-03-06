@@ -13,12 +13,8 @@ var GamePlay = (function () {
         this.announcement = $("#announcement");
         this.delayEl = $("#delay");
 
-        this.wireEvents();
         this.newGame();
     }
-    GamePlay.prototype.wireEvents = function () {
-    };
-
     GamePlay.prototype.delay = function () {
         return parseInt(this.delayEl.val());
     };
