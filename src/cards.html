@@ -3,7 +3,16 @@
 <head>
     <title>Cards!</title>
     <script src="jquery-2.1.0.min.js"></script>
+    <script src="Rank.js"></script>
+    <script src="Suit.js"></script>
+    <script src="Deck.js"></script>
+    <script src="Card.js"></script>
+    <script src="Player.js"></script>
+    <script src="ComputerPlayer.js"></script>
+    <script src="HumanPlayer.js"></script>
+    <script src="Board.js"></script>
     <script src="cards.js"></script>
+
 
     <style type="text/css">
 
@@ -14,9 +23,20 @@
             text-align: center;
         }
 
+        #startingCards
+        {
+            width: 50px;
+        }
+
         #delay
         {
-            width: 65px;
+            width: 50px;
+        }
+
+        .inputField
+        {
+            display: inline-block;
+            margin-right: 30px;
         }
 
         .player
@@ -64,7 +84,8 @@
 <body>
 
     <div>
-        Message delay: <input id="delay" type="text" pattern="\d+" value="2500" /> ms
+        <span class="inputField">Starting cards: <input id="startingCards" type="text" pattern="\d+" value="7" /> ms</span>
+        <span class="inputField">Message delay: <input id="delay" type="text" pattern="\d+" value="2500" /> ms</span>
     </div>
     <div class="announcer">
         <h1 id="announcement"></h1>
