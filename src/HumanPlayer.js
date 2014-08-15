@@ -23,12 +23,12 @@ var HumanPlayer = (function (_super) {
 
     HumanPlayer.prototype.chooseCard = function (nextStep) {
         this.gamePlay.announce(this.name + ", choose a card.");
-        var _this = this;
+        var _self = this;
 
         $("a", this.container).unbind("click").attr("href", "#").click(function () {
             // 'this' refers to the 'a' element
             var card = $(this).data("card");
-            _this.choseCard();
+            _self.choseCard();
             nextStep(card);
         });
     };

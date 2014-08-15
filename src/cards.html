@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cards!</title>
+    <title>Go Fish!</title>
     <script src="jquery-2.1.0.min.js"></script>
     <script src="Rank.js"></script>
     <script src="Suit.js"></script>
@@ -41,12 +41,12 @@
 
         .player
         {
-            width: 40%;
+            width: 30%;
             float: left;
-            border: solid 1px gray;
+            border: solid 3px gray;
             padding: 0 5px 0 5px;
             margin-left: 15px;
-            margin-top: 15px;
+            margin-top: 0px;
         }
 
         .cards
@@ -69,7 +69,7 @@
         .stacks
         {
             clear: both;
-            margin: 15px 5px 15px 5px;
+            margin: 15px 0 15px 5px;
             border: solid 3px green;
             min-height: 170px;
         }
@@ -78,6 +78,25 @@
             content: " ";
             display: block;
             clear: both;
+        }
+
+        .logContainer
+        {
+            display: block;
+            float: right;
+            width: 30%;
+            border: solid 3px blue;
+            height: 600px;
+            overflow-y: scroll;
+        }
+
+        .logs
+        {
+            margin-left: 15px;
+        }
+        .logs > div
+        {
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -93,6 +112,9 @@
     <div id="gameBoard">
 
     </div>
-
+    <div class="logContainer">
+        <h1>Log</h1>
+        <div class="logs"></div>
+    </div>
 </body>
 </html>

@@ -21,6 +21,7 @@ var GamePlay = (function () {
     GamePlay.prototype.newGame = function () {
         var human = new HumanPlayer("Human", this);
         var computer = new ComputerPlayer("Computer", this);
+
         human.nextPlayer = computer;
         computer.nextPlayer = human;
 
@@ -186,6 +187,9 @@ var GamePlay = (function () {
 
     GamePlay.prototype.announce = function (message) {
         this.announcement.text(message);
+
+        $("div.logs").append($("<div>").text(message));
+        $("div.logContainer").scrollTop($("div.logContainer")[0].scrollHeight);
     };
     return GamePlay;
 })();

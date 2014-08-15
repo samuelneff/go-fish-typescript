@@ -20,7 +20,7 @@ class HumanPlayer extends Player
     public chooseCard(nextStep:(card:Card) => void)
     {
         this.gamePlay.announce(this.name + ", choose a card.");
-        var _this = this;
+        var _self = this;
 
         $("a", this.container)
             .unbind("click")
@@ -28,10 +28,13 @@ class HumanPlayer extends Player
             .click(function() {
                 // 'this' refers to the 'a' element
                 var card:Card = $(this).data("card");
-                _this.choseCard();
+                _self.choseCard();
                 nextStep(card);
             });
     }
+
+
+
 
     private choseCard():void {
         $("a", this.container)

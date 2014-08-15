@@ -30,6 +30,7 @@ class GamePlay {
 
         var human:Player = new HumanPlayer("Human", this);
         var computer:Player = new ComputerPlayer("Computer", this);
+
         human.nextPlayer = computer;
         computer.nextPlayer = human;
 
@@ -203,5 +204,8 @@ class GamePlay {
 
     public announce(message:string):void {
         this.announcement.text(message);
+
+        $("div.logs").append($("<div>").text(message));
+        $("div.logContainer").scrollTop($("div.logContainer")[0].scrollHeight);
     }
 }
